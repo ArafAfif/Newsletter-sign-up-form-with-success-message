@@ -1,0 +1,233 @@
+:root{
+    /*Color*/
+    --tomatoColor: hsl(4, 100%, 67%);
+    --darkSlateGrey: hsl(234, 29%, 20%);
+    --charcoalGrey: hsl(235, 18%, 26%);
+    --gtreyColor: hsl(231, 7%, 60%);
+    --whiteColor: hsl(0, 0%, 100%);
+
+    /*Fonts*/
+    --primaryFont: "Roboto", sans-serif;;
+}
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -webkit-transition: 0.5s;
+}
+html, body{
+    height: 100%;
+}
+body{
+    font-family: var(--primaryFont);
+    background: var(--charcoalGrey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+p{
+   font-weight: 400;
+   margin-bottom: 15px; 
+   font-size: 1em;
+   line-height: 1.5em;
+}
+img{
+    max-width: 100%;
+}
+#sign_up_form{
+    width: 930px;
+    background: var(--whiteColor);
+    display: flex;
+    border-radius: 25px;
+}
+#sign_up_form.main{
+    display: none;
+}
+#sign_up_form section{
+    flex-basis: 50%;
+}
+#form_section{
+    padding: 100px 50px;
+}
+#form_section h1{
+    font-size: 55px;
+    color: var(--darkSlateGrey);
+    margin-bottom: 35px;
+}
+#form_section p{
+    color: var(--darkSlateGrey);
+    margin-bottom: 30px;
+}
+#form_section ul{
+    list-style-type: none;
+    margin-bottom: 40px;
+}
+#form_section ul li{
+    background: url(./images/icon-list.svg) no-repeat;
+    padding-left: 35px;
+    line-height: 1.5em;
+    margin-bottom: 16px;
+}
+#form_section ul li:last-child{
+    margin-bottom: 0;
+}
+#form_section .form{
+    overflow: hidden;
+}
+#form_section form label{
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--darkSlateGrey);
+    display: block;
+    margin-bottom: 15px;
+    display: inline-block;
+    float: left;
+}
+#form_section form #invalid{
+    color: var(--tomatoColor);
+    font-size: 12px;
+    float: right;
+}
+#form_section form input[type="email"]{
+    padding: 15px 20px;
+    font-size: 1em;
+    color: var(--gtreyColor);
+    border: 1px solid var(--gtreyColor);
+    border-radius: 6px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+#form_section form input[type="email"]:focus{
+    outline: 1px solid var(--darkSlateGrey);
+    color: var(--darkSlateGrey);
+    font-weight: 400;
+    background: none;
+}
+#form_section form input[type="email"].error{
+    background: #FFE8E6;
+    color: var(--tomatoColor);
+    outline: 1px solid var(--tomatoColor);
+    border: none;
+}
+#form_section form input[type="submit"]{
+    padding: 20px 70px;
+    font-size: 1.1em;
+    background: var(--darkSlateGrey);
+    color: var(--whiteColor);
+    border-radius: 10px;
+    border: none;
+}
+#form_section form input[type="submit"]:hover{
+    background: var(--tomatoColor);
+    box-shadow: 0 16px 50px var(--tomatoColor);
+    cursor: pointer;
+}
+#sign_up_form section img{
+    width: 100%;
+    height: auto;
+    padding: 25px;
+}
+#success_message.dismiss{
+    display: block;
+}
+#success_message{
+    display: none;
+    width: 505px;
+    background: var(--whiteColor);
+    padding: 65px 60px;
+    border-radius: 25px;
+}
+#success_message img{
+    margin-bottom: 40px;
+}
+#success_message h2{
+    font-size: 70px;
+    color: var(--darkSlateGrey);
+    line-height: 1em;
+    margin-bottom: 35px;
+}
+#success_message p{
+    color: var(--darkSlateGrey);
+    margin-bottom: 40px;
+    font-size: 1.05em;
+}
+#success_message p span{
+    font-weight: 700;
+}
+#success_message button{
+    background: var(--darkSlateGrey);
+    padding: 25px 125px;
+    border: none;
+    border-radius: 10px;
+    color: var(--whiteColor);
+    font-size: 1em;
+}
+#success_message button:hover{
+    background: var(--tomatoColor);
+    cursor: pointer;
+    box-shadow: 0 16px 50px var(--tomatoColor);
+}
+/* Resposive */
+@media only screen and (max-width:1024px) {
+    body,html{
+        height: auto;
+    }
+    #sign_up_form{
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        border-radius: 0;
+    }
+    #sign_up_form section{
+        flex-basis: 100%;
+    }
+    #form_section{
+        padding: 40px 25px;
+    }
+    #sign_up_form section{
+        display: inline-block;
+    }
+    #sign_up_form section img{
+        width: 100%;
+        padding: 0;
+    }
+    #form_section form input[type="submit"]{
+        padding: 20px 5%;
+        width: 100%;
+        font-size: 0.8em;
+    }
+    #form_section h1{
+        font-size: 2.5em;
+    }
+    #success_message{
+        width: 100%;
+        border-radius: 0;
+        padding: 40px 25px;
+    }
+    #success_message img{
+        margin-top: 25%;
+    }
+    #success_message h2{
+        font-size: 2.5em;
+    }
+    #success_message button{
+        margin-top: 50%;
+        padding: 20px 10%;
+        width: 100%;
+    }
+}
